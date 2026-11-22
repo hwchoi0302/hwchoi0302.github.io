@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Graduate research papers and preprints in reverse chronological order.
+description: Graduate research papers and preprints.
 nav: true
 nav_order: 2
 ---
@@ -19,6 +19,6 @@ nav_order: 2
 {% else %}
   <div style="text-align: center; padding: 3.5rem 1rem; color: var(--global-text-color-light);">
     <p style="font-size: 1.15rem; margin-bottom: 0.5rem;">추후 연구 논문이 추가될 예정입니다.</p>
-    <p style="font-size: 0.95rem;">Publications will be updated soon.</p>
+    <p style="font-size: 0.95rem;">Publications will be updated later.</p>
   </div>
 {% endif %}

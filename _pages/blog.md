@@ -31,7 +31,7 @@ pagination:
 {% if site.posts.size == 0 %}
   <div style="text-align: center; padding: 3.5rem 1rem; color: var(--global-text-color-light);">
     <p style="font-size: 1.15rem; margin-bottom: 0.5rem;">아직 작성된 글이 없습니다.</p>
-    <p style="font-size: 0.95rem;">Essays and research notes will be updated soon.</p>
+    <p style="font-size: 0.95rem;">Posts will be updated soon.</p>
   </div>
 {% else %}
 

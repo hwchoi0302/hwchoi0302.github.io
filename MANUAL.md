@@ -101,8 +101,8 @@ git push
 ## 5. 색상 테마 및 부가 기능 설정
 
 - **주간/야간 모드 색상 변경**: `_includes/head.liquid` 맨 아래 `<style>` 블록에서 색상을 바꿀 수 있습니다.
-  - 주간 모드(`:root`): 딥톤 블루 (`#1b3a6b`)
-  - 야간 모드(`html[data-theme="dark"]`): 쿨톤 레드 (`#e04868`)
+  - 주간 모드(`:root`): 밝은 블루 (`#2563eb`)
+  - 야간 모드(`html[data-theme="dark"]`): 파스텔 쿨톤 레드 (`#f48fa4`)
 - **댓글/좋아요(Giscus) 활성화**:
   1. GitHub 저장소 **Settings → General → Features → Discussions** 체크
   2. [giscus.app/ko](https://giscus.app/ko)에서 `hwchoi0302/hwchoi0302.github.io` 입력 후 발급된 `repo_id`, `category_id`를 `_config.yml`의 `giscus:` 아래에 입력

@@ -173,19 +173,68 @@
   {% include plugins/al_marimo_styles.liquid %}
 {% endif %}
 
-<!-- Custom Theme Palette: Deep-tone Blue (Light) & Cool-tone Red (Dark) -->
+<!-- Custom Theme Palette: Bright Blue (Light) & Pastel Cool-tone Red (Dark) -->
 <style>
   :root {
-    --global-theme-color: #1b3a6b;
-    --global-hover-color: #12284c;
-    --global-highlight-color: #1b3a6b;
-    --global-code-bg-color: rgba(27, 58, 107, 0.06);
+    --global-theme-color: #2563eb;
+    --global-hover-color: #1d4ed8;
+    --global-highlight-color: #2563eb;
+    --global-code-bg-color: rgba(37, 99, 235, 0.06);
   }
 
   html[data-theme="dark"] {
-    --global-theme-color: #e04868;
-    --global-hover-color: #f26482;
-    --global-highlight-color: #e04868;
-    --global-code-bg-color: rgba(224, 72, 104, 0.12);
+    --global-theme-color: #f48fa4;
+    --global-hover-color: #f9b4c2;
+    --global-highlight-color: #f48fa4;
+    --global-code-bg-color: rgba(244, 143, 164, 0.12);
+  }
+
+  /* Compact social icons (half-size) under profile & at page bottom */
+  .profile-social-icons {
+    margin-top: 0.7rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.35rem;
+    line-height: 1;
+  }
+  .profile-social-icons a {
+    color: var(--global-text-color);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .profile-social-icons a:hover {
+    color: var(--global-theme-color);
+  }
+
+  .page-bottom-social {
+    max-width: var(--max-content-width, 930px);
+    margin: 2.5rem auto 1.25rem;
+    padding: 1.25rem 1rem 0;
+    border-top: 1px solid var(--global-divider-color);
+    text-align: center;
+  }
+  .page-bottom-social .contact-icons {
+    font-size: 1.85rem;
+    line-height: 1;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .page-bottom-social .contact-icons a {
+    color: var(--global-text-color);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .page-bottom-social .contact-icons a:hover {
+    color: var(--global-theme-color);
+  }
+  .page-bottom-social .contact-note {
+    margin-top: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--global-text-color-light);
   }
 </style>

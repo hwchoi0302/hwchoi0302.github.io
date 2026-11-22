@@ -13,7 +13,7 @@ profile:
     <p>Seoul, South Korea</p>
 
 selected_papers: true # includes papers marked as "selected={true}" in _bibliography/papers.bib
-social: true # includes Email & GitHub icons at the bottom of the page
+social: false # social icons are rendered under the profile photo and at the bottom of main pages
 
 announcements:
   enabled: false
