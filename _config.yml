@@ -10,9 +10,7 @@ contact_note: >
   Feel free to reach out via email or GitHub.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal academic homepage and essay blog of Hyunwoo Choi (최현우).
-footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+footer_text: ""
 keywords: Hyunwoo Choi, 최현우, research, publications, blog, essay # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ✍️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
@@ -120,7 +118,7 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 analytics:
   # GoatCounter (cookie-free privacy-friendly analytics): https://www.goatcounter.com/
   # Create a free account (e.g. https://<your-code>.goatcounter.com) and enter <your-code> below.
-  goatcounter: # e.g. hwchoi0302
+  goatcounter: hwchoi0302 # e.g. hwchoi0302
   # For Google Analytics, see https://support.google.com/analytics/answer/10447272?hl=en&ref_topic=14088998&sjid=5129943941510317771-SA#zippy=%2Cgoogle-sites
   # and follow the instructions for Google Sites. You will need to create a Google Analytics property and copy the Google tag ID.
   google: # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
@@ -155,9 +153,9 @@ related_blog_posts:
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
 giscus:
   repo: hwchoi0302/hwchoi0302.github.io # <your-github-user-name>/<your-github-repo-name>
-  repo_id: # fill after enabling GitHub Discussions & Giscus app at https://giscus.app/
+  repo_id: R_kgDOV3i2Lg # fill after enabling GitHub Discussions & Giscus app at https://giscus.app/
   category: Comments # name of the category under which discussions will be created
-  category_id: # fill after enabling GitHub Discussions & Giscus app at https://giscus.app/
+  category_id: DIC_kwDOV3i2Ls4DLt6f # fill after enabling GitHub Discussions & Giscus app at https://giscus.app/
   mapping: pathname # identify discussions by post URL path (safe for Korean/English titles)
   strict: 1 # use strict identification mode
   reactions_enabled: 1 # enable (1) or disable (0) emoji reactions (likes)
@@ -229,6 +227,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE
+  - MANUAL.md
   - lighthouse_results/
   - package.json
   - package-lock.json

@@ -3,7 +3,7 @@ layout: default
 permalink: /blog/
 title: blog
 nav: true
-nav_order: 3
+nav_order: 1
 pagination:
   enabled: true
   collection: posts
@@ -28,31 +28,38 @@ pagination:
   </div>
 {% endif %}
 
-{% if site.display_tags and site.display_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
-  <div class="tag-category-list">
-    <ul class="p-0 m-0">
-      {% for tag in site.display_tags %}
-        <li>
-          <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag }}</a>
-        </li>
-        {% unless forloop.last %}
-          <p>&bull;</p>
-        {% endunless %}
-      {% endfor %}
-      {% if site.display_categories.size > 0 and site.display_tags.size > 0 %}
-        <p>&bull;</p>
-      {% endif %}
-      {% for category in site.display_categories %}
-        <li>
-          <i class="fa-solid fa-tag fa-sm"></i> <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">{{ category }}</a>
-        </li>
-        {% unless forloop.last %}
-          <p>&bull;</p>
-        {% endunless %}
-      {% endfor %}
-    </ul>
+{% if site.posts.size == 0 %}
+  <div style="text-align: center; padding: 3.5rem 1rem; color: var(--global-text-color-light);">
+    <p style="font-size: 1.15rem; margin-bottom: 0.5rem;">아직 작성된 글이 없습니다.</p>
+    <p style="font-size: 0.95rem;">Essays and research notes will be updated soon.</p>
   </div>
-{% endif %}
+{% else %}
+
+  {% if site.display_tags and site.display_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
+    <div class="tag-category-list">
+      <ul class="p-0 m-0">
+        {% for tag in site.display_tags %}
+          <li>
+            <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag }}</a>
+          </li>
+          {% unless forloop.last %}
+            <p>&bull;</p>
+          {% endunless %}
+        {% endfor %}
+        {% if site.display_categories.size > 0 and site.display_tags.size > 0 %}
+          <p>&bull;</p>
+        {% endif %}
+        {% for category in site.display_categories %}
+          <li>
+            <i class="fa-solid fa-tag fa-sm"></i> <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">{{ category }}</a>
+          </li>
+          {% unless forloop.last %}
+            <p>&bull;</p>
+          {% endunless %}
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
 
   <ul class="post-list">
     {% if page.pagination.enabled %}
@@ -115,5 +122,7 @@ pagination:
   {% if page.pagination.enabled %}
     {% include pagination.liquid %}
   {% endif %}
+
+{% endif %}
 
 </div>

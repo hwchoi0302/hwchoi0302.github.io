@@ -164,6 +164,38 @@ layout: default
     {% include citation.liquid %}
   {% endif %}
 
+  <!-- Copyright & Citation Box (automatically shown on all blog posts) -->
+  {% assign cite_year = page.date | date: '%Y' %}
+  {% assign cite_month = page.date | date: '%b' %}
+  {% assign cite_date_full = page.date | date: '%Y, %B %d' %}
+  {% assign cite_key = page.slug | default: 'post' | prepend: cite_year | prepend: 'choi' %}
+  {% assign post_abs_url = page.url | absolute_url %}
+  <aside
+    class="post-citation-box"
+    style="margin: 2.5rem 0 2rem; padding: 1.25rem 1.5rem; border-left: 4px solid var(--global-theme-color); background: var(--global-code-bg-color); border-radius: 0 8px 8px 0; font-size: 0.92rem;"
+  >
+    <p style="margin-bottom: 0.6rem; font-weight: 600;">
+      &copy; {{ cite_year }} {{ site.first_name }} {{ site.last_name }} (최현우). All rights reserved.
+    </p>
+    <p style="margin-bottom: 0.85rem; color: var(--global-text-color-light); font-size: 0.88rem;">
+      이 글의 저작권은 작성자({{ site.first_name }} {{ site.last_name }})에게 있습니다. 인용 시 아래 출처를 표기해 주세요.
+    </p>
+    <p style="margin-bottom: 0.6rem;">
+      <strong>Citation:</strong><br>
+      Choi, H. ({{ cite_date_full }}). <em>{{ page.title | escape }}</em>. {{ site.first_name }} {{ site.last_name }}'s Blog. {{ post_abs_url }}
+    </p>
+    <details style="margin-top: 0.5rem;">
+      <summary style="cursor: pointer; font-weight: 500; color: var(--global-theme-color);">BibTeX</summary>
+      <pre style="margin-top: 0.6rem; padding: 0.75rem; border-radius: 6px; overflow-x: auto; font-size: 0.82rem;"><code>@misc{ {{- cite_key -}},
+  author = {Choi, Hyunwoo},
+  title  = { {{- page.title | escape -}} },
+  year   = { {{- cite_year -}} },
+  month  = { {{- cite_month -}} },
+  url    = { {{- post_abs_url -}} }
+}</code></pre>
+    </details>
+  </aside>
+
   {% if page.related_publications %}
     <h2>References</h2>
     <div class="publications">
