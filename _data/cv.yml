@@ -1,0 +1,65 @@
+cv:
+  name: Hyunwoo Choi (최현우)
+  label: Graduate Researcher
+  email: hwchoi030235@yonsei.ac.kr
+  location: Seoul, South Korea
+  image: ""
+  summary: Graduate student and researcher at Yonsei University. Interested in research, engineering, and writing essays.
+
+  social_networks:
+    - network: GitHub
+      username: hwchoi0302
+
+  sections:
+    Education:
+      - institution: Yonsei University
+        location: Seoul, South Korea
+        url: https://www.yonsei.ac.kr/
+        area: Your Department / Major
+        studyType: M.S. / Ph.D. Candidate
+        start_date: 2024-03
+        end_date: present
+        highlights:
+          - "Research focus: (Add your research topics here)"
+          - "Advisor: (Add your advisor's name)"
+
+      - institution: Yonsei University
+        location: Seoul, South Korea
+        area: Your Undergraduate Major
+        studyType: B.S.
+        start_date: 2020-03
+        end_date: 2024-02
+        highlights:
+          - "Relevant coursework or honors"
+
+    Research Experience:
+      - company: Your Lab Name, Yonsei University
+        position: Graduate Research Assistant
+        location: Seoul, South Korea
+        start_date: 2024-03
+        end_date: present
+        summary: Conducting graduate research and publishing papers.
+        highlights:
+          - Key project or contribution 1
+          - Key project or contribution 2
+
+    Publications:
+      - title: "Sample Research Paper Title (Replace with your actual paper)"
+        authors:
+          - Hyunwoo Choi
+          - Co-Author Name
+        publisher: Conference / Journal Name
+        releaseDate: 2026-01
+        url: https://hwchoi0302.github.io/publications/
+
+    Awards & Honors:
+      - title: Scholarship / Award Name
+        date: 2025-09
+        awarder: Yonsei University
+        summary: Brief description of the award or scholarship.
+
+    Skills:
+      - label: Programming
+        details: Python, C/C++, Markdown, LaTeX
+      - label: Research Tools
+        details: PyTorch, Git, Linux

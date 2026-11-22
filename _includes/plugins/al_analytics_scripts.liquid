@@ -1,0 +1,9 @@
+{% al_analytics_scripts %}
+{% if site.analytics.goatcounter and site.analytics.goatcounter != '' %}
+  <!-- GoatCounter Analytics (cookie-free) -->
+  <script
+    data-goatcounter="https://{{ site.analytics.goatcounter | strip | escape }}.goatcounter.com/count"
+    async
+    src="https://gc.zgo.at/count.js"
+  ></script>
+{% endif %}

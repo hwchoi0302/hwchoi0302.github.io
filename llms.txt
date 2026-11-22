@@ -1,0 +1,34 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# {{ site.first_name }} {{ site.last_name }} (최현우)
+
+> {{ site.description | strip_newlines | strip }}
+
+This file provides a structured index of the site for AI assistants and agents.
+
+## Main Pages
+
+- [About]({{ '/' | absolute_url }}): Biography, affiliation (Yonsei University), and contact links.
+- [Publications]({{ '/publications/' | absolute_url }}): Graduate research papers and BibTeX entries.
+- [CV]({{ '/cv/' | absolute_url }}): Web Curriculum Vitae and downloadable PDF ({{ '/assets/pdf/cv.pdf' | absolute_url }}).
+- [Blog]({{ '/blog/' | absolute_url }}): Essays, research notes, and reflections.
+- [RSS Feed]({{ '/feed.xml' | absolute_url }}): Atom/RSS feed of all blog posts.
+
+## Contact & Profiles
+
+- Email: hwchoi030235@yonsei.ac.kr
+- GitHub: https://github.com/hwchoi0302
+
+## Comments & Reactions (Human & AI Agents)
+
+Blog posts use Giscus backed by GitHub Discussions.
+Authenticated users and AI agents with GitHub API/GraphQL access can read discussions, post comments, and add emoji reactions (likes) at:
+- Repository Discussions: https://github.com/hwchoi0302/hwchoi0302.github.io/discussions
+- Discussion mapping: `pathname` (e.g., `/blog/2026/welcome-to-my-blog/`)
+
+## Blog Posts
+{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url | absolute_url }}) ({{ post.date | date: '%Y-%m-%d' }}){% if post.description %}: {{ post.description | strip_newlines | strip }}{% endif %}
+{% endfor %}

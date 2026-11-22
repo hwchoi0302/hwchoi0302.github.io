@@ -1,0 +1,183 @@
+---
+layout: default
+---
+{% assign year = page.date | date: '%Y' %}
+{% assign tags = page.tags | join: '' %}
+{% assign categories = page.categories | join: '' %}
+{% assign url_beginning = page.url | slice: 0, 6 %}
+{% assign hero_image = page.cover | default: page.thumbnail %}
+{% assign read_time = content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
+
+<style type="text/css">
+  .medium-post {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+  .medium-post .post-header {
+    margin-bottom: 1.75rem;
+  }
+  .medium-post .post-title {
+    font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+  .medium-post .post-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--global-text-color-light);
+    margin-bottom: 1rem;
+  }
+  .medium-post .post-hero {
+    margin: 1.5rem 0 2.25rem;
+  }
+  .medium-post .post-hero img {
+    width: 100%;
+    max-height: 440px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+  .medium-post .post-hero figcaption {
+    margin-top: 0.6rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--global-text-color-light);
+  }
+  .medium-post #markdown-content {
+    font-size: 1.08rem;
+    line-height: 1.85;
+  }
+  .medium-post #markdown-content p {
+    margin-bottom: 1.35rem;
+  }
+  .medium-post #markdown-content h2,
+  .medium-post #markdown-content h3 {
+    margin-top: 2.2rem;
+    margin-bottom: 0.85rem;
+    font-weight: 700;
+  }
+  .medium-post #markdown-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 1.5rem auto;
+  }
+  .medium-post #markdown-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.75rem 0;
+    font-size: 0.95rem;
+  }
+  .medium-post #markdown-content th,
+  .medium-post #markdown-content td {
+    padding: 0.65rem 0.85rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .medium-post #markdown-content th {
+    font-weight: 600;
+    border-bottom-width: 2px;
+  }
+</style>
+
+{% if page._styles %}
+  <!-- Page/Post style -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<div class="post medium-post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="post-subtitle">{{ page.description }}</p>
+    {% endif %}
+    <p class="post-meta">
+      {{ page.date | date: '%B %d, %Y' }}
+      &nbsp;&middot;&nbsp; {{ read_time }} min read
+      {% if page.author %}&nbsp;&middot;&nbsp; {{ page.author }}{% endif %}
+      {% assign last_date = page.last_modified_at | default: page.last_updated %}
+      {% if last_date %}&nbsp;&middot;&nbsp; Updated {{ last_date | date: '%B %d, %Y' }}{% endif %}
+      {% if page.meta %}&nbsp;&middot;&nbsp; {{ page.meta }}{% endif %}
+    </p>
+    <p class="post-tags">
+      {% if url_beginning == '/blog/' %}
+        <a href="{{ year | prepend: '/blog/' | relative_url }}"> <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
+      {% else %}
+        <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
+      {% endif %}
+      {% if tags != '' %}
+        &nbsp; &middot; &nbsp;
+        {% for tag in page.tags %}
+          {% if url_beginning == '/blog/' %}
+            <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}"> <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
+          {% else %}
+            <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}
+          {% endif %}
+          {% unless forloop.last %}
+            &nbsp;
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+
+      {% if categories != '' %}
+        &nbsp; &middot; &nbsp;
+        {% for category in page.categories %}
+          {% if url_beginning == '/blog/' %}
+            <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}"> <i class="fa-solid fa-tag fa-sm"></i> {{ category -}}</a>
+          {% else %}
+            <i class="fa-solid fa-tag fa-sm"></i> {{ category }}
+          {% endif %}
+          {% unless forloop.last %}
+            &nbsp;
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+    </p>
+  </header>
+
+  {% if hero_image %}
+    <figure class="post-hero">
+      <img src="{{ hero_image | relative_url }}" alt="{{ page.title | escape }}" data-zoomable loading="eager">
+      {% if page.cover_caption %}
+        <figcaption>{{ page.cover_caption | escape }}</figcaption>
+      {% endif %}
+    </figure>
+  {% endif %}
+
+  <article class="post-content">
+    {% if page.toc and page.toc.beginning %}
+      <div id="table-of-contents">
+        {% toc %}
+      </div>
+      <hr>
+    {% endif %}
+    <div id="markdown-content">
+      {{ content }}
+    </div>
+  </article>
+
+  {% if page.citation %}
+    {% include citation.liquid %}
+  {% endif %}
+
+  {% if page.related_publications %}
+    <h2>References</h2>
+    <div class="publications">
+      {% bibliography --group_by none --cited_in_order %}
+    </div>
+  {% endif %}
+
+  {% if site.related_blog_posts and site.related_blog_posts.enabled %}
+    {% if page.related_posts == null or page.related_posts %}
+      {% include related_posts.liquid %}
+    {% endif %}
+  {% endif %}
+
+  {% if site.plugins contains 'al_comments' %}
+    {% include plugins/al_comments.liquid %}
+  {% endif %}
+</div>

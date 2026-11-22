@@ -1,0 +1,12 @@
+# Social links & quick-access icons (rendered in the order listed below)
+# Reference: https://github.com/george-gca/jekyll-socials
+
+email: hwchoi030235@yonsei.ac.kr # Email icon
+github_username: hwchoi0302 # GitHub icon
+cv_pdf: /assets/pdf/cv.pdf # Direct CV PDF download icon
+rss_icon: true # RSS feed icon (helpful for readers & AI agents)
+
+# Optional: uncomment when you want to add more academic/social profiles
+# scholar_userid: # Google Scholar ID
+# orcid_id: # ORCID ID
+# linkedin_username: # LinkedIn username
