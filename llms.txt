@@ -26,5 +26,3 @@ Authenticated users and AI agents with GitHub API/GraphQL access can read discus
 
 ## Blog Posts
 
-- [개인 홈페이지와 에세이 블로그를 시작하며](https://hwchoi0302.github.io/blog/2026/welcome-to-my-blog/) (2026-11-22): 대학원 연구 기록과 에세이를 마크다운(.md)으로 정리하기 위한 첫 번째 샘플 글입니다.
-
