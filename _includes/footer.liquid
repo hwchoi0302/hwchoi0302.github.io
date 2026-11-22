@@ -1,5 +1,5 @@
 {% assign show_bottom_social = false %}
-{% if page.url == '/' or page.url == '/index.html' or page.url == '/blog/' or page.url == '/publications/' or page.url == '/cv/' %}
+{% if page.url == '/' or page.url == '/index.html' or page.url == '/blog/' or page.url == '/blog/index.html' or page.url contains '/blog/page/' or page.url == '/publications/' or page.url == '/publications/index.html' or page.url == '/cv/' or page.url == '/cv/index.html' %}
   {% assign show_bottom_social = true %}
 {% endif %}
 

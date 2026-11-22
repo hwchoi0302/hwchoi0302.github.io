@@ -4,7 +4,7 @@
 <!-- Security: Content Security Policy -->
 <meta
   http-equiv="Content-Security-Policy"
-  content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"
+  content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"
 >
 <style>
   :root {
@@ -177,9 +177,9 @@
 <style>
   :root {
     --global-theme-color: #2563eb;
-    --global-hover-color: #1d4ed8;
-    --global-highlight-color: #2563eb;
-    --global-code-bg-color: rgba(37, 99, 235, 0.06);
+    --global-hover-color: #14348b;
+    --global-highlight-color: #1f55c9;
+    --global-code-bg-color: rgba(31, 84, 199, 0.06);
   }
 
   html[data-theme="dark"] {
@@ -208,10 +208,25 @@
     color: var(--global-theme-color);
   }
 
+  /* Keep page-bottom social icons anchored to the bottom even on tall/short viewports */
+  html,
+  body {
+    min-height: 100vh;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  body > .container[role="main"] {
+    flex: 1 0 auto;
+    width: 100%;
+  }
+
   .page-bottom-social {
+    width: 100%;
     max-width: var(--max-content-width, 930px);
-    margin: 2.5rem auto 1.25rem;
-    padding: 1.25rem 1rem 0;
+    margin: auto auto 0;
+    padding: 1.5rem 1rem 4.25rem;
     border-top: 1px solid var(--global-divider-color);
     text-align: center;
   }
