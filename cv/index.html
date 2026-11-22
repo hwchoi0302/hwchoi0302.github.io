@@ -23,23 +23,72 @@
     initTheme();
   </script> <style>
   :root {
-    --global-theme-color: #1b3a6b;
-    --global-hover-color: #12284c;
-    --global-highlight-color: #1b3a6b;
-    --global-code-bg-color: rgba(27, 58, 107, 0.06);
+    --global-theme-color: #2563eb;
+    --global-hover-color: #1d4ed8;
+    --global-highlight-color: #2563eb;
+    --global-code-bg-color: rgba(37, 99, 235, 0.06);
   }
 
   html[data-theme="dark"] {
-    --global-theme-color: #e04868;
-    --global-hover-color: #f26482;
-    --global-highlight-color: #e04868;
-    --global-code-bg-color: rgba(224, 72, 104, 0.12);
+    --global-theme-color: #f48fa4;
+    --global-hover-color: #f9b4c2;
+    --global-highlight-color: #f48fa4;
+    --global-code-bg-color: rgba(244, 143, 164, 0.12);
+  }
+
+  /* Compact social icons (half-size) under profile & at page bottom */
+  .profile-social-icons {
+    margin-top: 0.7rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.35rem;
+    line-height: 1;
+  }
+  .profile-social-icons a {
+    color: var(--global-text-color);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .profile-social-icons a:hover {
+    color: var(--global-theme-color);
+  }
+
+  .page-bottom-social {
+    max-width: var(--max-content-width, 930px);
+    margin: 2.5rem auto 1.25rem;
+    padding: 1.25rem 1rem 0;
+    border-top: 1px solid var(--global-divider-color);
+    text-align: center;
+  }
+  .page-bottom-social .contact-icons {
+    font-size: 1.85rem;
+    line-height: 1;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .page-bottom-social .contact-icons a {
+    color: var(--global-text-color);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .page-bottom-social .contact-icons a:hover {
+    color: var(--global-theme-color);
+  }
+  .page-bottom-social .contact-note {
+    margin-top: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--global-text-color-light);
   }
 </style> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Hyunwoo</span> Choi </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/cv/">CV <span class="sr-only">(current)</span> </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title"> CV <a href="/assets/pdf/cv.pdf" target="_blank" rel="noopener noreferrer" class="float-right"> <i class="fa-solid fa-file-pdf"></i> </a> </h1> <p class="post-description">Curriculum Vitae of Hyunwoo Choi (최현우). Click the PDF icon on the top right to view or download the PDF version.</p> </header> <article> <div class="cv"> <div class="card mt-3 p-3"> <h3 class="card-title font-weight-medium">Contact Information</h3> <table class="table table-cv table-sm table-borderless"> <tr> <td class="p-1 pr-2 font-weight-bold"><b>Name</b></td> <td class="p-1 pl-2 font-weight-light">Hyunwoo Choi (최현우)</td> </tr> <tr> <td class="p-1 pr-2 font-weight-bold"><b>Professional Title</b></td> <td class="p-1 pl-2 font-weight-light">Graduate Researcher</td> </tr> <tr> <td class="p-1 pr-2 font-weight-bold"><b>Email</b></td> <td class="p-1 pl-2 font-weight-light">hwchoi030235@yonsei.ac.kr</td> </tr> </table> </div> <div class="card mt-3 p-3"> <h3 class="card-title font-weight-medium">Professional Summary</h3> <p>Graduate student and researcher at Yonsei University. Interested in research, engineering, and writing essays. </p> </div> <a class="anchor" id="education"></a> <div class="card mt-3 p-3"> <h3 class="card-title font-weight-medium">Education</h3> <div> <ul class="card-text font-weight-light list-group list-group-flush"> <li class="list-group-item"> <div class="row"> <div class="col-xs-2 col-sm-2 col-md-2 text-center date-column"> <table class="table-cv"> <tbody> <tr> <td> <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">2024 - present</span> </td> </tr> <tr> <td> <p class="location"> <i class="fa-solid fa-location-dot iconlocation"></i> Seoul, South Korea </p> </td> </tr> </tbody> </table> </div> <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0"> <h6 class="title font-weight-bold ml-1 ml-md-4"> <a href="https://www.yonsei.ac.kr/" rel="external nofollow noopener" target="_blank"> M.S. / Ph.D. Candidate </a> </h6> <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">Yonsei University</h6> <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">Your Department / Major</h6> <ul class="items"> <li> <span class="item">Research focus: (Add your research topics here) </span> </li> <li> <span class="item">Advisor: (Add your advisor’s name) </span> </li> </ul> </div> </div> </li> <li class="list-group-item"> <div class="row"> <div class="col-xs-2 col-sm-2 col-md-2 text-center date-column"> <table class="table-cv"> <tbody> <tr> <td> <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">2020 - 2024</span> </td> </tr> <tr> <td> <p class="location"> <i class="fa-solid fa-location-dot iconlocation"></i> Seoul, South Korea </p> </td> </tr> </tbody> </table> </div> <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0"> <h6 class="title font-weight-bold ml-1 ml-md-4"> B.S. </h6> <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">Yonsei University</h6> <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">Your Undergraduate Major</h6> <ul class="items"> <li> <span class="item">Relevant coursework or honors </span> </li> </ul> </div> </div> </li> </ul> </div> </div> <a class="anchor" id="research-experience"></a> <div class="card mt-3 p-3"> <h3 class="card-title font-weight-medium">Research Experience</h3> <div> </div> </div> <a class="anchor" id="publications"></a> <div class="card mt-3 p-3"> <h3 class="card-title font-weight-medium">Publications</h3> <div> <ul class="card-text font-weight-light list-group list-group-flush"> <li class="list-group-item"> <div class="row"> <div class="col-xs-2 col-sm-2 col-md-2 text-center"> <table class="table-cv"> <tbody> <tr> <td> <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">2026</span> </td> </tr> </tbody> </table> </div> <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0"> <h6 class="title font-weight-bold ml-1 ml-md-4"> <a href="https://hwchoi0302.github.io/publications/">Sample Research Paper Title (Replace with your actual paper)</a> </h6> <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem"> <em>Conference / Journal Name</em> </h6> </div> </div> </li> </ul> </div> </div> <a class="anchor" id="awards-honors"></a> <div class="card mt-3 p-3"> <h3 class="card-title font-weight-medium">Awards &amp; Honors</h3> <div> </div> </div> <a class="anchor" id="skills"></a> <div class="card mt-3 p-3"> <h3 class="card-title font-weight-medium">Skills</h3> <div> <div class="card-text font-weight-light"> <div class="skill-item"> <strong>:</strong> </div> <div class="skill-item"> <strong>:</strong> </div> </div> <style>
   .skill-item {
     padding: 0.5rem 0;
   }
-</style> </div> </div> </div> </article> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Hyunwoo Choi. </div> </footer> <script>
+</style> </div> </div> </div> </article> </div> </div> </div> </div> <div class="page-bottom-social"> <div class="contact-icons"> <a href="mailto:hwchoi030235@yonsei.ac.kr" title="Email"><i class="fa-solid fa-envelope"></i></a> <a href="https://github.com/hwchoi0302" title="Github username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="/assets/pdf/cv.pdf" title="Cv pdf"><i class="ai ai-cv"></i></a> <a href="/feed.xml" title="Rss icon"><i class="fa-solid fa-square-rss"></i></a> </div> <div class="contact-note">Feel free to reach out via email or GitHub. </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Hyunwoo Choi. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -66,7 +115,7 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "Graduate research papers and preprints in reverse chronological order.",
+          description: "Graduate research papers and preprints.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
