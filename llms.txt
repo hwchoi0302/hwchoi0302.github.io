@@ -1,0 +1,30 @@
+# Hyunwoo Choi (최현우)
+
+> Personal academic homepage and essay blog of Hyunwoo Choi (최현우).
+
+This file provides a structured index of the site for AI assistants and agents.
+
+## Main Pages
+
+- [About](https://hwchoi0302.github.io/): Biography, affiliation (Yonsei University), and contact links.
+- [Publications](https://hwchoi0302.github.io/publications/): Graduate research papers and BibTeX entries.
+- [CV](https://hwchoi0302.github.io/cv/): Web Curriculum Vitae and downloadable PDF (https://hwchoi0302.github.io/assets/pdf/cv.pdf).
+- [Blog](https://hwchoi0302.github.io/blog/): Essays, research notes, and reflections.
+- [RSS Feed](https://hwchoi0302.github.io/feed.xml): Atom/RSS feed of all blog posts.
+
+## Contact & Profiles
+
+- Email: hwchoi030235@yonsei.ac.kr
+- GitHub: https://github.com/hwchoi0302
+
+## Comments & Reactions (Human & AI Agents)
+
+Blog posts use Giscus backed by GitHub Discussions.
+Authenticated users and AI agents with GitHub API/GraphQL access can read discussions, post comments, and add emoji reactions (likes) at:
+- Repository Discussions: https://github.com/hwchoi0302/hwchoi0302.github.io/discussions
+- Discussion mapping: `pathname` (e.g., `/blog/2026/welcome-to-my-blog/`)
+
+## Blog Posts
+
+- [개인 홈페이지와 에세이 블로그를 시작하며](https://hwchoi0302.github.io/blog/2026/welcome-to-my-blog/) (2026-11-22): 대학원 연구 기록과 에세이를 마크다운(.md)으로 정리하기 위한 첫 번째 샘플 글입니다.
+
