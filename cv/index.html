@@ -15,18 +15,18 @@
         "name": "Hyunwoo Choi",
         "@context": "https://schema.org"
     }
-  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
   :root {
     --max-content-width: 930px;
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9C%8D%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="stylesheet" href="/assets/css/al-folio-cv.css?v=734ded6bdb6d549b12085aded7cf1c5e"> <link rel="canonical" href="https://hwchoi0302.github.io/cv/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> <style>
+  </script> <link rel="stylesheet" href="/assets/al_email_protect/css/email-protect.css"> <style>
   :root {
     --global-theme-color: #2563eb;
-    --global-hover-color: #1d4ed8;
-    --global-highlight-color: #2563eb;
-    --global-code-bg-color: rgba(37, 99, 235, 0.06);
+    --global-hover-color: #14348b;
+    --global-highlight-color: #1f55c9;
+    --global-code-bg-color: rgba(31, 84, 199, 0.06);
   }
 
   html[data-theme="dark"] {
@@ -55,10 +55,25 @@
     color: var(--global-theme-color);
   }
 
+  /* Keep page-bottom social icons anchored to the bottom even on tall/short viewports */
+  html,
+  body {
+    min-height: 100vh;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  body > .container[role="main"] {
+    flex: 1 0 auto;
+    width: 100%;
+  }
+
   .page-bottom-social {
+    width: 100%;
     max-width: var(--max-content-width, 930px);
-    margin: 2.5rem auto 1.25rem;
-    padding: 1.25rem 1rem 0;
+    margin: auto auto 0;
+    padding: 1.5rem 1rem 4.25rem;
     border-top: 1px solid var(--global-divider-color);
     text-align: center;
   }
@@ -127,7 +142,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{
+        },{id: "post-종교를-없애는-방법",
+        
+          title: "종교를 없애는 방법",
+        
+        description: "종교의 소멸과 대체 이념: 현실의 맹목적 신앙",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/how-to-eliminate-religion/";
+          
+        },
+      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
@@ -183,4 +209,4 @@ ninja.data = [{
       },
     },];
 
-</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> <script defer src="/assets/al_email_protect/js/email-protect.js"></script> </body> </html>

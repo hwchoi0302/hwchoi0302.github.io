@@ -26,3 +26,5 @@ Authenticated users and AI agents with GitHub API/GraphQL access can read discus
 
 ## Blog Posts
 
+- [종교를 없애는 방법](https://hwchoi0302.github.io/blog/2026/how-to-eliminate-religion/) (2026-11-22): 종교의 소멸과 대체 이념: 현실의 맹목적 신앙
+
